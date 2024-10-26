@@ -88,3 +88,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+
+# fonts:
+ #        - family:AutumnFlowers-9YVZK
+ #        - fonts:
+  #          - asset: assets/fonts/AutumnFlowers-9YVZK.otf
+
