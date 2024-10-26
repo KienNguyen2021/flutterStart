@@ -12,42 +12,75 @@ void main() {
 
           child: Scaffold(
 
-            body: Center(child: MyWidget()), // Text in the Center
+            // body : Center(child: MyWidget()), // Text in the Center
 
-          //  body:  MyWidget(),   // Text will be displayed on Top
+              //     body:  MyWidget(),   // Text will be displayed on Top
 
+              body:  Center(child: MyWidget()),
+
+                ),
              ),
-             ),
 
 
-    debugShowCheckedModeBanner:false , // disappear the Flutter at corner of phone
+           debugShowCheckedModeBanner:false , // disappear the Flutter at corner of phone
 
-  ));
-}
+           )
+         );
+    }
 
 // When users have no interaction, no status change, use StatelessWidget
-
 // When users have interaction, status change, use StatelfullWidget
 
-class MyWidget extends StatelessWidget{
+class MyWidget extends StatelessWidget {
 
- // final bool loading;
+  // final bool loading;
   //MyWidget(this.loading);
 
-  @override
-  Widget build(BuildContext context) {
+     @override
+     Widget build(BuildContext context) {
+
+       return const Card(
+
+          color: Colors.pinkAccent,
+
+          margin: EdgeInsets.all(5.0),    // 5 pexel from left-right margin
+
+         //Padding(
+         //padding: //EdgeInsets.all(40.0),  // after padding automactively
+         // put the cursor after all, show more options
+         // 30 pexel from the text to margin
+
+         // put Ctrl before Text ----> select Wrap With padding
+         child: Padding(
+             //padding: EdgeInsets.all(30.0), // 30 pexel from the text to all sides : right,left,top,bottom
+
+          // padding: EdgeInsets.fromLTRB(20.0, 50.0, 30.0,50.0),
+
+                //   padding: EdgeInsets.only(left:20.0),   // only left 20 pexel
+
+                padding: EdgeInsets.symmetric(vertical: 70, horizontal: 70),
+
+           child: Text('Kien Nguyen from Flutter',
+             style: TextStyle(
+               fontSize: 25,
+               color: Colors.yellow,
+             ),
+
+           ),
+         ),
+       );
+
+     }
+
+  }
+
     // TODO: implement build
-    //return loading ? const CircularProgressIndicator() : const Text('State');
+   //return loading ? const CircularProgressIndicator() : const Text('State');
 
     // put Const before Text, because Text is unchanged
 
-    return const Text(
-        ' Hi every boys at DayCare Horizon, I am Kenny Nguyen, missing all of you a lot'
-           'I expect one day to get back to see you'
-            'A widget is either stateful or stateless.'
-        'If a widget can change—when a user interacts with it,'
-        'for example: it s stateful. A stateless widget never changes. '
-        'Icon , IconButton , and Text are examples of stateless widget.',
+    // return const Text(
+    //    'I am Flutter, Hi everybody !',
 
       //textDirection: TextDirection.rtl,   // right to left
 
@@ -55,50 +88,38 @@ class MyWidget extends StatelessWidget{
 
       //textAlign: TextAlign.justify,     // both side equal
 
-    maxLines: 12,     // appear in 3 lines only
+  // maxLines: 12,     // appear in 3 lines only
 
       //overflow: TextOverflow.clip,
-      overflow: TextOverflow.ellipsis,   // if text is long, appear ...
+    //  overflow: TextOverflow.ellipsis,   // if text is long, appear ...
 
       // overflow: TextOverflow.ellipsis.fade : to fade Text
 
      // textScaleFactor: 2.5,  // Text is bigger to 2.5
 
-      style: TextStyle(
-          fontSize: 30,       // unit is pexel
+    //  style: TextStyle(
+      //    fontSize: 30,       // unit is pexel
         //color: Colors.purpleAccent,
         //  color: Color.fromARGB(255, 255, 7, 0),
 
-          color: Colors.black,
-          backgroundColor: Colors.green,
-          fontStyle: FontStyle.italic,
-          fontFamily: 'Times New Roman',
+        //color: Colors.black,
+       //   backgroundColor: Colors.green,
+         // fontStyle: FontStyle.italic,
 
-          wordSpacing: 10,   // worunit is pixel
-          letterSpacing :2,
+        //  fontFamily: 'AutumnFlowers-9YVZK',
 
-          decoration: TextDecoration.underline, // underline
+       //   wordSpacing: 10,   // worunit is pixel
+        //  letterSpacing :2,
 
-          shadows: <Shadow>[
-            Shadow(
-                 offset: Offset(10.0, 10.0),
-                 blurRadius: 2.0,
-                 color: Color.fromARGB(255, 0, 0, 0),
-          ),
+      //    decoration: TextDecoration.underline, // underline
 
-            Shadow(
-              offset: Offset(10.0, 10.0),
-              blurRadius: 8.0,
-              color: Color.fromARGB(125, 0, 0, 255),
-            ),
-          ],
 
-         ),
+        // ),
 
-    );
+    //);
 
-  }
+  //}
 
-}
+//}
 
 
