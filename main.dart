@@ -39,51 +39,40 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    /*
-    in Container : using Alignment : aligment, AligmentDirectional, FractionalOffset
-     */
-    return Container(
-
-         color: Colors.lime,  // color is covered the whole screen without "Child"
-
-          width: 350,      // size of the box
-          height: 350,
-         // alignment: Alignment(-0.5,0.7),
-         // alignment: Alignment.topRight,
-        //alignment: Alignment.center,    // Text in the middle of container
-        //alignment: Alignment.centerLeft,    // Text is in center, but move to left
-      padding: EdgeInsets.all(30),       // Text is 30px from all sides
-      margin: const EdgeInsets.all(15),    // the container edge is 15 away from all side
-
-    //with Child, the color is covered around the Text
-
-    /*  decoration: BoxDecoration(     // Added Const before BoxDecoration
-
-          color : Colors.blueAccent,
-         // shape: BoxShape.circle
-          // shape: BoxShape.rectangle
-          borderRadius: BorderRadius.all(Radius.circular(35)),  // 4 cornders are round...
-
-          border: Border.all(width: 5, color: Colors.redAccent)
-
-        )
-*/
+    // put cursor before SizeBox--------> Select Wrap Center :
 
 
+    return Center(
+      child: SizedBox.expand(
 
-      /*
-      add Decoration, must comment Child
-      child : const Text('I am Flutter', style: TextStyle(fontSize: 40, color: Colors.pink)),
-       */
+        //use Expand to replace double.infinitive..is the same result
 
-// add Transform, put back "Child" :
+      //   width: 300,
+      //  width: double.infinity,  // width is full of phone screen
+      //  height: double.infinity,  // height is full of phone screen
 
-    alignment: Alignment.center,
-    transform: Matrix4.rotationX(0.2),
 
-    child : const Text('I am Flutter', style: TextStyle(fontSize: 40, color: Colors.pink)),
+       /*or use Child : SizedBox(
+        height : 200, ) only
 
+        */
+
+        child: ElevatedButton(
+
+            onPressed:(){},
+
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white
+          ),
+
+            child: const Text('I am Flutter', style: TextStyle(fontSize: 30)),
+
+        ),
+
+      ),
     );
+
 }
 }
 
