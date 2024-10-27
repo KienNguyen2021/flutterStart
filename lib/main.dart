@@ -12,114 +12,74 @@ void main() {
 
           child: Scaffold(
 
-            // body : Center(child: MyWidget()), // Text in the Center
+             body : Center(child: MyWidget()), // Text in the Center
 
-              //     body:  MyWidget(),   // Text will be displayed on Top
+               // body:  MyWidget()   // Text will be displayed on Top
 
-              body:  Center(child: MyWidget()),
+           //   body:  Center(child: MyWidget()),
 
-                ),
+                )
              ),
-
-
            debugShowCheckedModeBanner:false , // disappear the Flutter at corner of phone
 
            )
          );
     }
 
-// When users have no interaction, no status change, use StatelessWidget
-// When users have interaction, status change, use StatelfullWidget
+
 
 class MyWidget extends StatelessWidget {
-
   // final bool loading;
   //MyWidget(this.loading);
+ // Return const Card :
+// return TextButton 
 
-     @override
-     Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
 
-       return const Card(
+    // return TextButton
+    // Text
+//Color
+//Size
+//Padding
+//Margin
+//Shade
+//Shadow
+//Border
+//Icon
+//Disable
 
-          color: Colors.pinkAccent,
+  //******************************************************************
 
-          margin: EdgeInsets.all(5.0),    // 5 pexel from left-right margin
+// put cursor before TextButton-----> Select Wrap with Container : to Group
+    return  Container(
 
-         //Padding(
-         //padding: //EdgeInsets.all(40.0),  // after padding automactively
-         // put the cursor after all, show more options
-         // 30 pexel from the text to margin
+      //add Margin here :
+       margin: const  EdgeInsets.all(70),
 
-         // put Ctrl before Text ----> select Wrap With padding
-         child: Padding(
-             //padding: EdgeInsets.all(30.0), // 30 pexel from the text to all sides : right,left,top,bottom
+         child: TextButton(
+           onPressed : (){
 
-          // padding: EdgeInsets.fromLTRB(20.0, 50.0, 30.0,50.0),
+                print('Click text button');
+            },
 
-                //   padding: EdgeInsets.only(left:20.0),   // only left 20 pexel
+          style : TextButton.styleFrom(
+               foregroundColor: Colors.redAccent,
+               backgroundColor: Colors.blue,
+            //  minimumSize: const Size(200, 80),
+             //  padding: const EdgeInsets.all(40),
 
-                padding: EdgeInsets.symmetric(vertical: 70, horizontal: 70),
+              ),
 
-           child: Text('Kien Nguyen from Flutter',
-             style: TextStyle(
-               fontSize: 25,
-               color: Colors.yellow,
-             ),
+          child: const Text('Click on Me',
 
-           ),
-         ),
-       );
+                style: TextStyle(
+
+                         fontSize: 30 ),
+
+          )),
+    );
 
      }
 
   }
-
-    // TODO: implement build
-   //return loading ? const CircularProgressIndicator() : const Text('State');
-
-    // put Const before Text, because Text is unchanged
-
-    // return const Text(
-    //    'I am Flutter, Hi everybody !',
-
-      //textDirection: TextDirection.rtl,   // right to left
-
-      //style: TextStyle(fontWeight: FontWeight.bold ),
-
-      //textAlign: TextAlign.justify,     // both side equal
-
-  // maxLines: 12,     // appear in 3 lines only
-
-      //overflow: TextOverflow.clip,
-    //  overflow: TextOverflow.ellipsis,   // if text is long, appear ...
-
-      // overflow: TextOverflow.ellipsis.fade : to fade Text
-
-     // textScaleFactor: 2.5,  // Text is bigger to 2.5
-
-    //  style: TextStyle(
-      //    fontSize: 30,       // unit is pexel
-        //color: Colors.purpleAccent,
-        //  color: Color.fromARGB(255, 255, 7, 0),
-
-        //color: Colors.black,
-       //   backgroundColor: Colors.green,
-         // fontStyle: FontStyle.italic,
-
-        //  fontFamily: 'AutumnFlowers-9YVZK',
-
-       //   wordSpacing: 10,   // worunit is pixel
-        //  letterSpacing :2,
-
-      //    decoration: TextDecoration.underline, // underline
-
-
-        // ),
-
-    //);
-
-  //}
-
-//}
-
-
