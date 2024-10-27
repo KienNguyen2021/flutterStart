@@ -33,46 +33,85 @@ void main() {
 
 class MyWidget extends StatelessWidget {
 
-  // final bool loading;
-  //MyWidget(this.loading);
 
-     @override
-     Widget build(BuildContext context) {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
 
-       return const Card(
+    /*return OutlinedButton(
+        onPressed: () {
+             print('Click the Outlined Button');
+        },
+        style: OutlinedButton.styleFrom(
+           backgroundColor: Colors.pink,
+          foregroundColor: Colors.blueAccent,
+          minimumSize: const Size(300,80),
+          padding : EdgeInsets.all(15)
 
-          color: Colors.pinkAccent,
+        ),
+        child: const Text('I am Flutter', style: TextStyle(fontSize: 38))
+    );
 
-          margin: EdgeInsets.all(5.0),    // 5 pexel from left-right margin
+     */
 
-         //Padding(
-         //padding: //EdgeInsets.all(40.0),  // after padding automactively
-         // put the cursor after all, show more options
-         // 30 pexel from the text to margin
+// put cursor before OutlinedButton -----------> Select Wrap with Container
 
-         // put Ctrl before Text ----> select Wrap With padding
-         child: Padding(
-             //padding: EdgeInsets.all(30.0), // 30 pexel from the text to all sides : right,left,top,bottom
+    return Container(
+      
+      margin :EdgeInsets.all(12),
+      /* put icon, put period after OutlinedButton :
+        change 'Child'-----> to Label :
+      */
+      child: OutlinedButton.icon(
 
-          // padding: EdgeInsets.fromLTRB(20.0, 50.0, 30.0,50.0),
+        /*
+             onPressed: null -----------> null :   is disable the button onPressed
+        */
 
-                //   padding: EdgeInsets.only(left:20.0),   // only left 20 pexel
+          onPressed: () {
+            print('Click the Outlined Button');
+          },
+          style: OutlinedButton.styleFrom(
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.blueAccent,
+              minimumSize: const Size(300,80),
+              padding : EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40)    //both sides are round
+                 ),
 
-                padding: EdgeInsets.symmetric(vertical: 70, horizontal: 70),
+                elevation: 20,    // the thickness of shadow
+                shadowColor: Colors.blueAccent.withOpacity(0.5),
 
-           child: Text('Kien Nguyen from Flutter',
-             style: TextStyle(
-               fontSize: 25,
-               color: Colors.yellow,
-             ),
+                side : BorderSide(width: 5, color: Colors.orange)
 
-           ),
-         ),
-       );
+          ),
 
-     }
+          /*
+             onPressed: null -----------> null :   is disable the button onPressed
+             and commend all in "style: OutlinedButton.styleFrom"
+             added :
+             disableBackgroundColor :Color.grey,
+             disabledForegroundColor :Colors.white.withOpacity(0.5)
 
+             -----------> diable the Button
+        */
+
+          // after put 'Icon' before OutlinedButton, change 'child' to 'label' :
+          // add icon : Icon...
+          //add modifier : const
+          
+          icon: const Icon(Icons.adb_rounded, size: 43,),
+
+          label: const Text('I am Flutter', style: TextStyle(fontSize: 38))
+      ),
+    );
   }
+}
+
+
+
+
 
     // TODO: implement build
    //return loading ? const CircularProgressIndicator() : const Text('State');
