@@ -27,138 +27,65 @@ void main() {
            )
          );
     }
+/*
+ Color, without Chidl, Size with Height-Width,  Alignment(Alignment, AlignmentDirection, FractionalOffset),
+ padding, margin, decoration (color, shape, borderRadius, border), transfer
 
-// When users have no interaction, no status change, use StatelessWidget
-// When users have interaction, status change, use StatelfullWidget
+ */
 
 class MyWidget extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
 
-    /*return OutlinedButton(
-        onPressed: () {
-             print('Click the Outlined Button');
-        },
-        style: OutlinedButton.styleFrom(
-           backgroundColor: Colors.pink,
-          foregroundColor: Colors.blueAccent,
-          minimumSize: const Size(300,80),
-          padding : EdgeInsets.all(15)
-
-        ),
-        child: const Text('I am Flutter', style: TextStyle(fontSize: 38))
-    );
-
+    /*
+    in Container : using Alignment : aligment, AligmentDirectional, FractionalOffset
      */
-
-// put cursor before OutlinedButton -----------> Select Wrap with Container
-
     return Container(
-      
-      margin :EdgeInsets.all(12),
-      /* put icon, put period after OutlinedButton :
-        change 'Child'-----> to Label :
-      */
-      child: OutlinedButton.icon(
 
-        /*
-             onPressed: null -----------> null :   is disable the button onPressed
-        */
+         color: Colors.lime,  // color is covered the whole screen without "Child"
 
-          onPressed: () {
-            print('Click the Outlined Button');
-          },
-          style: OutlinedButton.styleFrom(
-              backgroundColor: Colors.black,
-              foregroundColor: Colors.blueAccent,
-              minimumSize: const Size(300,80),
-              padding : EdgeInsets.all(15),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40)    //both sides are round
-                 ),
+          width: 350,      // size of the box
+          height: 350,
+         // alignment: Alignment(-0.5,0.7),
+         // alignment: Alignment.topRight,
+        //alignment: Alignment.center,    // Text in the middle of container
+        //alignment: Alignment.centerLeft,    // Text is in center, but move to left
+      padding: EdgeInsets.all(30),       // Text is 30px from all sides
+      margin: const EdgeInsets.all(15),    // the container edge is 15 away from all side
 
-                elevation: 20,    // the thickness of shadow
-                shadowColor: Colors.blueAccent.withOpacity(0.5),
+    //with Child, the color is covered around the Text
 
-                side : BorderSide(width: 5, color: Colors.orange)
+    /*  decoration: BoxDecoration(     // Added Const before BoxDecoration
 
-          ),
+          color : Colors.blueAccent,
+         // shape: BoxShape.circle
+          // shape: BoxShape.rectangle
+          borderRadius: BorderRadius.all(Radius.circular(35)),  // 4 cornders are round...
 
-          /*
-             onPressed: null -----------> null :   is disable the button onPressed
-             and commend all in "style: OutlinedButton.styleFrom"
-             added :
-             disableBackgroundColor :Color.grey,
-             disabledForegroundColor :Colors.white.withOpacity(0.5)
+          border: Border.all(width: 5, color: Colors.redAccent)
 
-             -----------> diable the Button
-        */
+        )
+*/
 
-          // after put 'Icon' before OutlinedButton, change 'child' to 'label' :
-          // add icon : Icon...
-          //add modifier : const
-          
-          icon: const Icon(Icons.adb_rounded, size: 43,),
 
-          label: const Text('I am Flutter', style: TextStyle(fontSize: 38))
-      ),
+
+      /*
+      add Decoration, must comment Child
+      child : const Text('I am Flutter', style: TextStyle(fontSize: 40, color: Colors.pink)),
+       */
+
+// add Transform, put back "Child" :
+
+    alignment: Alignment.center,
+    transform: Matrix4.rotationX(0.2),
+
+    child : const Text('I am Flutter', style: TextStyle(fontSize: 40, color: Colors.pink)),
+
     );
-  }
+}
 }
 
-
-
-
-
-    // TODO: implement build
-   //return loading ? const CircularProgressIndicator() : const Text('State');
-
-    // put Const before Text, because Text is unchanged
-
-    // return const Text(
-    //    'I am Flutter, Hi everybody !',
-
-      //textDirection: TextDirection.rtl,   // right to left
-
-      //style: TextStyle(fontWeight: FontWeight.bold ),
-
-      //textAlign: TextAlign.justify,     // both side equal
-
-  // maxLines: 12,     // appear in 3 lines only
-
-      //overflow: TextOverflow.clip,
-    //  overflow: TextOverflow.ellipsis,   // if text is long, appear ...
-
-      // overflow: TextOverflow.ellipsis.fade : to fade Text
-
-     // textScaleFactor: 2.5,  // Text is bigger to 2.5
-
-    //  style: TextStyle(
-      //    fontSize: 30,       // unit is pexel
-        //color: Colors.purpleAccent,
-        //  color: Color.fromARGB(255, 255, 7, 0),
-
-        //color: Colors.black,
-       //   backgroundColor: Colors.green,
-         // fontStyle: FontStyle.italic,
-
-        //  fontFamily: 'AutumnFlowers-9YVZK',
-
-       //   wordSpacing: 10,   // worunit is pixel
-        //  letterSpacing :2,
-
-      //    decoration: TextDecoration.underline, // underline
-
-
-        // ),
-
-    //);
-
-  //}
-
-//}
 
 
