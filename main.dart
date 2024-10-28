@@ -14,9 +14,9 @@ void main() {
 
             // body : Center(child: MyWidget()), // Text in the Center
 
-              //     body:  MyWidget(),   // Text will be displayed on Top
+                   body:  MyWidget(),   // Text will be displayed on Top
 
-              body:  Center(child: MyWidget()),
+             // body:  Center(child: MyWidget()),
 
                 ),
              ),
@@ -35,42 +35,61 @@ void main() {
 
 class MyWidget extends StatelessWidget {
 
-
   @override
   Widget build(BuildContext context) {
 
-    // put cursor before SizeBox--------> Select Wrap Center :
+// put the cursor before Column------>Select Wrap with Container
+    return Container(
+
+        margin: EdgeInsets.all(19),  // margin all sides for all boxes
+
+       child: Column(    // Column  : to devide the whole screen
+                       // Row devided boxes in 1 row
+         children: [
+
+           const SizedBox(height :10),
+
+           Expanded(
+             flex: 2 ,       // partion devided
+
+               child: Container(
+               color: Colors.black,
+               height:  200,
+
+                )
 
 
-    return Center(
-      child: SizedBox.expand(
-
-        //use Expand to replace double.infinitive..is the same result
-
-      //   width: 300,
-      //  width: double.infinity,  // width is full of phone screen
-      //  height: double.infinity,  // height is full of phone screen
+           ),
 
 
-       /*or use Child : SizedBox(
-        height : 200, ) only
+           const SizedBox(height :10),  // the gap between boxes, if Row, use 'Width"
 
-        */
+           Expanded(
 
-        child: ElevatedButton(
+               flex: 3 ,       // partion devided
 
-            onPressed:(){},
+               child: Container(
+             color: Colors.red,
+             height:  200,
+           )),
 
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white
-          ),
+           const SizedBox(height :15),  // the gap between boxes, if Row, use 'Width"
 
-            child: const Text('I am Flutter', style: TextStyle(fontSize: 30)),
+           Expanded(
+               flex: 1 ,       // partion devided
 
-        ),
+               child: Container(
+             color: Colors.blue,
+             height:  200,
+             )),
 
-      ),
+
+
+           const SizedBox(height :18), // the gap between boxes, if Row, use 'Width"
+         ],
+
+
+       ),
     );
 
 }
